@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Task</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="resources/img/note_tab_icon.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="main_content">
+        <header id="cabecera">
+            <div id="logo">
+                <img src="resources/img/block_notes.png">
+                <h1>TASK REGISTER</h1>
+            </div>
+
+            <div id="task_input_container">
+                <label for="task_input">Task:</label>
+                <input type="text" placeholder="Enter your Task. . ." id="task_input">
+                <div class="operation_buttons">
+                    <button type="button" id="add_button" class="button-c1">Add</button>
+                    <button type="button" id="delete_selected" class="button-c1">Del</button>
+                    <button type="button" id="delete_all_button" class="button-c1">Del All</button>
+                </div>
+            </div>
+        </header>
+        <ul id="task_container">
+                <li class="task">
+                    <input type="checkbox" onclick="deleteSelectedTasks()">
+                    <p class="text_task">Pueden agregar tareas y eliminarlas seleccionando varias o eliminarlas todas al mismo tiempo...</p>
+                </li>
+        </ul>
+    </div>
+    <footer>
+        <h4>Thanks for use TASK</h4>
+        <ul>
+            <li><a href="#"><img src="resources/img/instagram.png" width="24px"></img></a></li>
+            <li><a href="#"><img src="resources/img/facebook.png" width="24px"></img></a></li>
+            <li><a href="#"><img src="resources/img/gorjeo.png" width="24px"></img></a></li>
+        </ul>
+    </footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/javaScript.js"></script>
+
+</html>
