@@ -36,44 +36,48 @@ function deleteAllTasks(){
     }, 500);
 }
 
-
+//It allows to add a task.
 function addTask(){
-    let textTaskInput = document.getElementById('task_input');
+    let textTaskInput = document.getElementById('task_input');  //Get the text of the input.
 
+    //If the text field is empty, then it will alert the user.
     if (textTaskInput.value.toString().trim().length === 0) {
         alert('There is no text in the input.');
         return;
     }
 
-    let textContainer = document.getElementById('task_container');
+    let textContainer = document.getElementById('task_container');  //Get the content where the tasks are.
 
+    //Create and configurate the task:
+
+    //Create and configurate the li element:
     let newTask = document.createElement('li');
     newTask.setAttribute('class', 'task');
-
+    
+    //Create and configurate the input checkbox:
     let checkBox = document.createElement('input');
     checkBox.type = 'checkbox'
-
     checkBox.addEventListener('click', function(){
         checkBox.disabled=true;
         newTask.style.backgroundColor = "#36393a";
         newTask.style.color = '#e9e9e9';
     })
 
-    let textTask = document.createElement('p');
+    //Creates the text element of the task:
+    let textTask = document.createElement('p'); 
     textTask.setAttribute('class', 'text_task');
-    let nodeText = document.createTextNode(textTaskInput.value.toString());
-    textTask.append(nodeText);
+    let nodeText = document.createTextNode(textTaskInput.value.toString()); //Get the text.
+    textTask.append(nodeText);      //The text is added to the 'p' element.
+    newTask.appendChild(checkBox);  //The check box is added to the new Task element.
+    newTask.appendChild(textTask);  //The text of the task is added to the new Task element.
 
-    newTask.appendChild(checkBox);
-    newTask.appendChild(textTask);
+    addTaskAnimation(newTask);  //Play the animation.
+    textContainer.appendChild(newTask); //The element is added
 
-    addTaskAnimation(newTask);
-
-    textContainer.appendChild(newTask);
-
-    textTaskInput.value = "";
+    textTaskInput.value = "";   //Reset the text field.
 }
 
+//Animation when the user delete a task.
 function deleteTaskAnimation(e){
     gsap.to(e, {
         opacity: 0,
@@ -82,6 +86,7 @@ function deleteTaskAnimation(e){
     })
 }
 
+//Animation when the user add a task
 function addTaskAnimation(e){
     gsap.fromTo(e, {
         opacity: 0,
